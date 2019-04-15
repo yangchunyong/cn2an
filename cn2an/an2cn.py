@@ -7,9 +7,10 @@ class An2Cn():
     def __init__(self):
         self.conf = utils.get_default_conf()
     
-    def an2cn(self, input_data=u"defalut_key", is_cap=False):
+    def an2cn(self, input_data=u"defalut_key", is_cap=False,is_terminal=False):
         # 从命令行接受参数
-        input_data, is_cap = self.input_from_terminal(input_data, is_cap)
+        if is_terminal:
+            input_data, is_cap = self.input_from_terminal(input_data, is_cap)
 
         # 将数字转化为字符串
         if not isinstance(input_data, str):
